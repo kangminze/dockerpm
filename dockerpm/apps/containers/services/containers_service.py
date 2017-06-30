@@ -5,8 +5,15 @@ from dockerpm.apps.common.docker_client import docker_client
 class ContainersService(object):
 
     def containers(self):
-        client = docker_client()
-        client.containers.list()
+        result = list()
+        containers = docker_client().containers.list(all=True)
+        if not containers:
+            return result
+        for container in containers:
+            tmp = dict()
+            tmp["id"] = container.id
+            tmp["name"] = container.name
+            tmp["short_id"] = container.short_id
+            tmp["status"] = container.status
+            tmp["image"] = container.image
 
-
-ContainersService().containers()
