@@ -16,4 +16,6 @@ class ContainersService(object):
             tmp["short_id"] = container.short_id
             tmp["status"] = container.status
             tmp["image"] = container.image
+            result.append(tmp)
+        return result
 

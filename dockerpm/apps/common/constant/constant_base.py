@@ -1,0 +1,5 @@
+# _*_ coding: utf-8 _*_
+
+RETURN_LEVEL_ERROR = "ERROR"
+RETURN_LEVEL_WARN = "WARN"
+RETURN_LEVEL_INFO = "INFO"
