@@ -19,3 +19,6 @@ class ContainersService(object):
             result.append(tmp)
         return result
 
+    def start(self, id):
+        container = docker_client().containers.get(id)
+        container.start()

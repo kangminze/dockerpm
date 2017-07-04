@@ -21,5 +21,11 @@ class ContainersViewSet(viewsets.ModelViewSet):
         result = self.containerService.containers()
         return result
 
+    @response()
     def start(self, request):
-        pass
+        ids = request.data.get("ids")
+        if not ids:
+            return False
+        for id in ids:
+            self.containerService.start(id)
+        return True
