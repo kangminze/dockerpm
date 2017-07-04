@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'containers',
+    'dockerpm.apps.containers',
 ]
 
 # rest framework config
@@ -107,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
+DEFAULT_CHARSET = 'UTF-8'
 
 LANGUAGE_CODE = 'en-us'
 

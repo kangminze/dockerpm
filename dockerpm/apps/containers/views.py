@@ -3,9 +3,14 @@
 from rest_framework import (viewsets, status)
 from rest_framework.response import Response
 from dockerpm.apps.common.tools.response import response
+from dockerpm.apps.containers.services.containers_service import ContainersService
 
 
 class ContainersViewSet(viewsets.ModelViewSet):
+
+
+    containerService = ContainersService()
+
 
     def test(self, request):
         print "hello world"
@@ -13,4 +18,8 @@ class ContainersViewSet(viewsets.ModelViewSet):
 
     @response()
     def containers(self, request):
-        return Response()
+        result = self.containerService.containers()
+        return result
+
+    def start(self, request):
+        pass
